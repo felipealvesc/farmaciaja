@@ -1,8 +1,6 @@
 <template>
   <div>
-
     <h1 class="centralizado">{{ titulo }} </h1>
-
     <p v-show="mensagem" class="centralizado">{{ mensagem }}</p>
 
     <input type="search" class="filtro" @input="filtro = $event.target.value" placeholder="filtre pela descrição">
@@ -24,14 +22,14 @@
                 <li class="itens-tarefas"> Editado: {{ tarefa.datae }} {{ tarefa.horae }} </li>
                 <li class="itens-tarefas"> Status: {{ tarefa.status }} </li>
                 
-                
-                
+
             </ul>
             
             <router-link :to="{ name: 'altera', params: {id : tarefa.id }}">
               <meu-botao rotulo="alterar" tipo="button"/>
             </router-link> 
             <meu-botao tipo="button" rotulo="remover" @botaoAtivado="remove(tarefa)" :confirmacao="true" estilo="perigo"/>
+           
              
         </meu-painel>
 
@@ -70,8 +68,7 @@ methods: {
     this.tarefas.sort(function(a, b) {
       return a[chave].localeCompare(b[chave])
     });
-  }
- 
+  },
 
 },
 
@@ -82,7 +79,7 @@ methods: {
       titulo: 'Farmacia Já',
       tarefas: [],
       filtro:'',
-      mensagem: ''
+      mensagem: '',
 
     }
   },
@@ -143,7 +140,6 @@ function getData(){
     }
 }
 
-//console.log(_.isEmpty(123456));
 
 
 document.addEventListener('DOMContentLoaded', function(){

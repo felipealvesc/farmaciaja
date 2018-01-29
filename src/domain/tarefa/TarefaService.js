@@ -13,7 +13,7 @@ export default class TarefaService {
                 res => res.json(),
                 err => {
                     console.log(err);
-                    throw new Error('Não foi possível obter as fotos. Tenta mais tarde');
+                    throw new Error('Não foi possível obter as tarefas. Tenta mais tarde');
                 }
             )
     }
@@ -30,15 +30,13 @@ export default class TarefaService {
 
     }
     
-   
-    
     apaga(id) {
 
         return this._resource
             .delete({ id })
             .then(null, err => {
                 console.log(err);
-                throw new Error('Não foi possível remover a foto. Tente mais tarde');
+                throw new Error('Não foi possível remover a tarefa. Tente mais tarde');
             });
     }
 
