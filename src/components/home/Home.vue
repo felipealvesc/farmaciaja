@@ -7,10 +7,10 @@
 
     <input type="search" class="filtro" @input="filtro = $event.target.value" placeholder="filtre pela descrição">
     <div id="lista">
-      <ul>
-        <li><a href="#" @click="sortUsers('descricao')">descricao</a></li>
-        <li><a href="#" @click="sortUsers('data')">data</a></li>
-      </ul>
+      <span>ordenar por:</span>
+      <a href="#" @click="sortUsers('descricao')">descricao</a>
+      <a href="#" @click="sortUsers('data')">data</a>
+     
     </div> 
     <ul class="lista-tarefas">
       <li class="lista-tarefas-item" v-for="tarefa in tarefasComFiltro">
